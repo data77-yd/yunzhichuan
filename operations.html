@@ -600,6 +600,147 @@
   margin: 0;
 }
 
+
+/* ============================================================
+   案例一：凭证大图 + 公司介绍（上半部分）
+   ============================================================ */
+.case-cert-hero {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 32px;
+}
+.case-cert-left {
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cert-image-wrap {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,.12);
+  background: #FFF;
+}
+.cert-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cert-image-label {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.cert-image-number {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.case-cert-right {
+  flex: 1;
+  min-width: 280px;
+}
+.case-cert-right h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 12px;
+}
+.hl-data-name {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+/* ============================================================
+   流程步骤可视化条
+   ============================================================ */
+.case-process-flow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  background: #F8F9FB;
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  margin-bottom: 24px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.process-step {
+  flex: 1;
+  text-align: center;
+  min-width: 120px;
+  padding: 0 8px;
+}
+.process-step .ps-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #5B9BD5;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.process-step.active .ps-num {
+  background: #ED7D31;
+}
+.process-step .ps-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+.process-step.active .ps-title {
+  color: #ED7D31;
+}
+.process-step .ps-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.process-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #C0C8D0;
+  padding-top: 6px;
+  flex-shrink: 0;
+}
+
+/* 响应式：移动端流程条纵向 */
+@media (max-width: 767px) {
+  .case-cert-hero {
+    flex-direction: column;
+  }
+  .case-cert-left {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+  .case-process-flow {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 20px 16px;
+  }
+  .process-step {
+    width: 100%;
+    padding: 12px 0;
+  }
+  .process-arrow {
+    transform: rotate(90deg);
+    padding: 4px 0;
+  }
+}
+
 /* DAMA 标注 */
 .case-dama-note {
   margin-top: 16px;
@@ -610,6 +751,44 @@
   font-size: 12px;
   color: var(--text-muted);
   line-height: 1.8;
+}
+
+/* 两阶段流程 */
+.process-phase-wrap {
+  margin-bottom: 16px;
+}
+.process-phase-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 12px;
+  padding-left: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.process-phase-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background: var(--blue);
+  border-radius: 2px;
+}
+.process-phase-divider {
+  height: 1px;
+  background: linear-gradient(90deg, #E0E6EE 0%, #C8D2DE 50%, #E0E6EE 100%);
+  margin: 20px 0 24px;
+}
+.process-phase-summary {
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: rgba(91,155,213,.04);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 8px 8px 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.9;
 }
 
 /* ============================================================
@@ -1111,226 +1290,108 @@
     <div class="ops-section-header">
       <span class="section-num">03</span>
       <h2>真实案例：数据怎么变成钱的</h2>
-      <p class="section-desc">两个民营企业数据资产运营的真实样本</p>
+      <p class="section-desc">民营企业数据资产登记凭证与运营的真实样本</p>
     </div>
 
-    <!-- 案例一：城事通办 -->
+        <!-- 案例一：四川裕承大数据集团 -->
     <div class="case-block" data-animate>
-      <div class="case-left">
-        <div class="case-illustration ci-community">
-          <svg viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg">
-            <!-- 社区建筑群 -->
-            <rect x="30" y="120" width="70" height="100" rx="6" fill="#FFF" stroke="#5B9BD5" stroke-width="1.5" opacity="0.9"/>
-            <rect x="40" y="130" width="18" height="18" rx="3" fill="#5B9BD5" opacity="0.3"/>
-            <rect x="40" y="155" width="18" height="18" rx="3" fill="#ED7D31" opacity="0.3"/>
-            <rect x="40" y="180" width="18" height="18" rx="3" fill="#5B9BD5" opacity="0.2"/>
-            <rect x="115" y="90" width="70" height="130" rx="6" fill="#FFF" stroke="#5B9BD5" stroke-width="1.5" opacity="0.9"/>
-            <rect x="125" y="100" width="18" height="18" rx="3" fill="#ED7D31" opacity="0.3"/>
-            <rect x="125" y="125" width="18" height="18" rx="3" fill="#5B9BD5" opacity="0.3"/>
-            <rect x="125" y="150" width="18" height="18" rx="3" fill="#5B9BD5" opacity="0.2"/>
-            <rect x="200" y="60" width="70" height="160" rx="6" fill="#FFF" stroke="#5B9BD5" stroke-width="1.5" opacity="0.9"/>
-            <rect x="210" y="72" width="18" height="18" rx="3" fill="#5B9BD5" opacity="0.3"/>
-            <rect x="210" y="97" width="18" height="18" rx="3" fill="#5B9BD5" opacity="0.2"/>
-            <rect x="210" y="122" width="18" height="18" rx="3" fill="#ED7D31" opacity="0.3"/>
-            <rect x="280" y="100" width="65" height="120" rx="6" fill="#FFF" stroke="#ED7D31" stroke-width="1.5" opacity="0.85"/>
-            <rect x="292" y="112" width="16" height="16" rx="3" fill="#ED7D31" opacity="0.25"/>
-            <!-- 人物图标 -->
-            <circle cx="65" cy="240" r="8" fill="#5B9BD5" opacity="0.4"/>
-            <circle cx="150" cy="245" r="8" fill="#5B9BD5" opacity="0.35"/>
-            <circle cx="235" cy="248" r="8" fill="#ED7D31" opacity="0.3"/>
-            <!-- 数据流线 -->
-            <path d="M65 240 Q65 230 65 220" stroke="#5B9BD5" stroke-width="1.2" fill="none" stroke-dasharray="4,3" opacity="0.5"/>
-            <path d="M150 245 Q150 220 150 207" stroke="#5B9BD5" stroke-width="1.2" fill="none" stroke-dasharray="4,3" opacity="0.5"/>
-            <path d="M235 248 Q235 210 235 200" stroke="#ED7D31" stroke-width="1.2" fill="none" stroke-dasharray="4,3" opacity="0.5"/>
-            <!-- 顶部汇聚中心 -->
-            <circle cx="200" cy="30" r="14" fill="#5B9BD5" opacity="0.8"/>
-            <circle cx="200" cy="30" r="8" fill="#FFF" opacity="0.9"/>
-            <text x="200" y="34" text-anchor="middle" font-size="9" fill="#5B9BD5" font-weight="700">平台</text>
-            <line x1="65" y1="220" x2="190" y2="38" stroke="#5B9BD5" stroke-width="0.8" stroke-dasharray="5,4" opacity="0.35"/>
-            <line x1="150" y1="207" x2="195" y2="40" stroke="#5B9BD5" stroke-width="0.8" stroke-dasharray="5,4" opacity="0.35"/>
-            <line x1="235" y1="200" x2="202" y2="42" stroke="#ED7D31" stroke-width="0.8" stroke-dasharray="5,4" opacity="0.35"/>
-          </svg>
+      <!-- 上半部分：左侧凭证大图 + 右侧公司介绍 -->
+      <div class="case-cert-hero">
+        <div class="case-cert-left">
+          <div class="cert-image-wrap">
+            <img src="images/cert_yucheng.png" alt="数据资产登记凭证" class="cert-image">
+          </div>
+          <div class="cert-image-label">上海数据交易所 · 数据资产凭证</div>
+          <div class="cert-image-number">凭证编号：DCBCN8N260044</div>
         </div>
-      </div>
-      <div class="case-right">
-        <h3>社区服务平台：城事通办</h3>
-        <span class="case-tag">数据资产运营</span>
-        <div class="case-section">
-          <h4>背景</h4>
-          <p>城事通办是面向社区居民的一站式生活服务平台，整合社区商业、物业服务、便民办事等场景，每天产生大量居民行为数据。</p>
-        </div>
-        <div class="case-section">
-          <h4>数据资产</h4>
-          <p>社区消费行为数据、物业报修工单数据、居民办事流程数据</p>
-        </div>
-        <div class="case-section">
-          <h4>运营路径</h4>
-          <ul>
-            <li><strong>数据盘点：</strong>梳理平台 3 大业务线 12 类数据字段</li>
-            <li><strong>场景匹配：</strong>居民消费偏好 → 社区商业精准推荐；报修时空分布 → 物业资源配置优化</li>
-            <li><strong>资产加工：</strong>数据清洗脱敏、用户画像建模、时空分析模型</li>
-            <li><strong>价值释放：</strong>社区商业推荐引擎，商户入驻转化率提升 40%；物业排班优化，响应时效缩短 35%</li>
-          </ul>
-        </div>
-        <div class="case-highlights">
-          <span class="case-highlight">GMV 增长 65%</span>
-          <span class="case-highlight hl-orange">运营成本降 28%</span>
-          <span class="case-highlight">上海数据交易所挂牌</span>
+        <div class="case-cert-right">
+          <h3>四川裕承大数据集团</h3>
+          <span class="case-tag">数据资产登记凭证</span>
+          <div class="case-section">
+            <p>四川裕承大数据集团股份有限公司，定位 AI+社区数字化运营企业。公司首个数据资产<strong class="hl-data-name">「城市电自流通市场波动风险指标」</strong>V1.0 2025 正式通过上海数据交易所审核，完成登记并获颁《数据资产凭证》。标志着公司在数据资产化、市场化运营方面迈出关键一步，为后续数据价值变现与业务拓展奠定了坚实的权属基础。</p>
+          </div>
         </div>
       </div>
 
-      <!-- 产品实景截图 -->
-      <div class="case-gallery">
-        <div class="case-gallery-title">城事通办 · 产品实景</div>
-        <div class="case-gallery-grid">
-          <img src="images/cstb_01.png" alt="城事通办数据产品列表" loading="lazy">
-          <img src="images/cstb_02.png" alt="AIGC城事学院课程推广" loading="lazy">
-          <img src="images/cstb_03.png" alt="城事通办内容分类" loading="lazy">
-          <img src="images/cstb_04.png" alt="城事通办城市生活服务" loading="lazy">
+      <!-- 下半部分：两阶段流程步骤可视化条 -->
+      <!-- 阶段一：从数据资源到资产凭证 -->
+      <div class="process-phase-wrap">
+        <div class="process-phase-title">阶段一：从数据资源到资产凭证</div>
+        <div class="case-process-flow">
+          <div class="process-step">
+            <div class="ps-num">1</div>
+            <div class="ps-title">资源梳理</div>
+            <div class="ps-desc">整合资产管理系统、电子租赁管理系统、保险管理系统数据，形成高质量数据集</div>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="ps-num">2</div>
+            <div class="ps-title">产品开发</div>
+            <div class="ps-desc">按需求→方案→规划→设计→开发流程，打造"电动自行车租赁风险指标"数据产品</div>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="ps-num">3</div>
+            <div class="ps-title">资产入表</div>
+            <div class="ps-desc">在财务系统中增设「无形资产-数据资源」科目，完成初始计量，数据资产价值显性化</div>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step active">
+            <div class="ps-num">4</div>
+            <div class="ps-title">交易所登记</div>
+            <div class="ps-desc">提交数据来源合法性声明、组织任命、权属承诺函等全套合规材料，顺利通过上数交审核</div>
+          </div>
+        </div>
+        <div class="process-phase-summary">构建跨部门高效协同机制，按照 DAMA 数据管理规范，设立数据治理专门机构，完成了资源梳理、数据产品开发、资产清单编制、财务入表等一系列标准化流程。</div>
+      </div>
+
+      <div class="process-phase-divider"></div>
+
+      <!-- 阶段二：从数据资产到融资落地 -->
+      <div class="process-phase-wrap">
+        <div class="process-phase-title">阶段二：从数据资产到融资落地</div>
+        <div class="case-process-flow">
+          <div class="process-step">
+            <div class="ps-num">5</div>
+            <div class="ps-title">资产评估</div>
+            <div class="ps-desc"></div>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="ps-num">6</div>
+            <div class="ps-title">融资授信</div>
+            <div class="ps-desc">资质审查、数据资产评估、授信额度核定</div>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="ps-num">7</div>
+            <div class="ps-title">质押登记</div>
+            <div class="ps-desc">动产融资统一登记、区块链存证、法律文件补充</div>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="ps-num">8</div>
+            <div class="ps-title">放款</div>
+            <div class="ps-desc">资金监管账户、授权费归集、现金流监控</div>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="ps-num">9</div>
+            <div class="ps-title">贷后监测 → 违约处置</div>
+            <div class="ps-desc">数据质量核查、价值重评、预警平仓、违约处置</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- 案例二：四川裕承大数据集团 -->
-    <div class="case-block" data-animate>
-      <div class="case-left">
-        <div class="case-illustration ci-city">
-          <svg viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg">
-            <!-- 背景轨道 -->
-            <rect x="118" y="6" width="144" height="268" rx="16" fill="rgba(91,155,213,.025)" stroke="rgba(91,155,213,.08)" stroke-width="1"/>
-            <line x1="190" y1="16" x2="190" y2="264" stroke="#5B9BD5" stroke-width="0.8" stroke-dasharray="5,5" opacity="0.15"/>
-            <!-- 阶段标注 -->
-            <text x="68" y="42" text-anchor="middle" font-size="8" fill="#5B9BD5" opacity="0.5" font-weight="600">数据资产化</text>
-            <text x="312" y="198" text-anchor="middle" font-size="8" fill="#ED7D31" opacity="0.5" font-weight="600">融资落地</text>
-            <line x1="90" y1="35" x2="118" y2="29" stroke="#5B9BD5" stroke-width="0.5" opacity="0.15" stroke-dasharray="3,3"/>
-            <line x1="305" y1="190" x2="262" y2="138" stroke="#ED7D31" stroke-width="0.5" opacity="0.15" stroke-dasharray="3,3"/>
-            <!-- ===== N1: 数据资源 ===== -->
-            <rect x="120" y="10" width="140" height="38" rx="10" fill="#EAF2FB" stroke="#5B9BD5" stroke-width="1.5"/>
-            <circle cx="143" cy="29" r="8" fill="#5B9BD5"/>
-            <text x="143" y="33" text-anchor="middle" font-size="9" fill="#FFF" font-weight="700">1</text>
-            <text x="195" y="34" text-anchor="middle" font-size="13" fill="#2C5282" font-weight="700">数据资源</text>
-            <!-- A1→2 -->
-            <line x1="190" y1="48" x2="190" y2="62" stroke="#5B9BD5" stroke-width="1.4"/>
-            <polygon points="185,59 190,67 195,59" fill="#5B9BD5"/>
-            <!-- ===== N2: 资产评估 ===== -->
-            <rect x="120" y="66" width="140" height="38" rx="10" fill="#EAF2FB" stroke="#5B9BD5" stroke-width="1.5"/>
-            <circle cx="143" cy="85" r="8" fill="#5B9BD5"/>
-            <text x="143" y="89" text-anchor="middle" font-size="9" fill="#FFF" font-weight="700">2</text>
-            <text x="195" y="90" text-anchor="middle" font-size="13" fill="#2C5282" font-weight="700">资产评估</text>
-            <!-- A2→3 -->
-            <line x1="190" y1="104" x2="190" y2="116" stroke="#ED7D31" stroke-width="1.4"/>
-            <polygon points="185,113 190,121 195,113" fill="#ED7D31"/>
-            <!-- ===== N3: 融资授信 ===== -->
-            <rect x="120" y="120" width="140" height="38" rx="10" fill="#FFF4EC" stroke="#ED7D31" stroke-width="1.5"/>
-            <circle cx="143" cy="139" r="8" fill="#ED7D31"/>
-            <text x="143" y="143" text-anchor="middle" font-size="9" fill="#FFF" font-weight="700">3</text>
-            <text x="195" y="144" text-anchor="middle" font-size="13" fill="#9C4A1A" font-weight="700">融资授信</text>
-            <!-- A3→4 -->
-            <line x1="190" y1="158" x2="190" y2="170" stroke="#ED7D31" stroke-width="1.4"/>
-            <polygon points="185,167 190,175 195,167" fill="#ED7D31"/>
-            <!-- ===== N4: 质押登记 ===== -->
-            <rect x="120" y="174" width="140" height="38" rx="10" fill="#FFF4EC" stroke="#ED7D31" stroke-width="1.5"/>
-            <circle cx="143" cy="193" r="8" fill="#ED7D31"/>
-            <text x="143" y="197" text-anchor="middle" font-size="9" fill="#FFF" font-weight="700">4</text>
-            <text x="195" y="198" text-anchor="middle" font-size="13" fill="#9C4A1A" font-weight="700">质押登记</text>
-            <!-- A4→5 -->
-            <line x1="190" y1="212" x2="190" y2="224" stroke="#ED7D31" stroke-width="1.4"/>
-            <polygon points="185,221 190,229 195,221" fill="#ED7D31"/>
-            <!-- ===== N5: 放款 ===== -->
-            <rect x="120" y="228" width="140" height="38" rx="10" fill="#FFF4EC" stroke="#ED7D31" stroke-width="1.5"/>
-            <circle cx="143" cy="247" r="8" fill="#ED7D31"/>
-            <text x="143" y="251" text-anchor="middle" font-size="9" fill="#FFF" font-weight="700">5</text>
-            <text x="195" y="252" text-anchor="middle" font-size="13" fill="#9C4A1A" font-weight="700">放款</text>
-          </svg>
-        </div>
-      </div>
-      <div class="case-right">
-        <h3>四川裕承大数据集团：从数据资源到融资落地</h3>
-        <span class="case-tag">融资标杆</span>
-        <div class="case-section">
-          <h4>背景</h4>
-          <p>四川裕承大数据集团股份有限公司，定位 AI+社区数字化运营企业。公司首个数据资产「裕承大数据城市电自流通市场波动风险指标 V1.0 2025」正式通过上海数据交易所审核，完成登记并获颁《数据资产凭证》。</p>
-        </div>
-        <div class="case-section">
-          <h4>数据资产化四步</h4>
-        </div>
-        <div class="case-steps-grid">
-          <div class="case-step-card">
-            <span class="csc-num">1</span>
-            <h5>资源梳理</h5>
-            <p>整合资产管理系统、电子租赁管理系统、保险管理系统数据，形成高质量数据集</p>
-          </div>
-          <div class="case-step-card">
-            <span class="csc-num">2</span>
-            <h5>产品开发</h5>
-            <p>按需求-方案-规划-设计-开发流程，打造「电动自行车租赁风险指标」数据产品</p>
-          </div>
-          <div class="case-step-card">
-            <span class="csc-num">3</span>
-            <h5>资产入表</h5>
-            <p>在财务系统中增设"无形资产-数据资源"科目，完成初始计量，实现数据资产价值显性化</p>
-          </div>
-          <div class="case-step-card">
-            <span class="csc-num">4</span>
-            <h5>交易所登记</h5>
-            <p>提交数据来源合法性声明、组织任命、权属承诺函等全套合规材料，通过上海数据交易所审核</p>
-          </div>
-        </div>
-        <div class="case-section">
-          <h4>融资落地路径</h4>
-        </div>
-        <div class="case-finance-flow">
-          <div class="cff-node">
-            <span class="cff-dot"></span>
-            <h5>资产评估</h5>
-            <p>数据质量核查<br>+ 价值评估</p>
-          </div>
-          <div class="cff-node">
-            <span class="cff-dot"></span>
-            <h5>融资授信</h5>
-            <p>资质审查<br>+ 授信额度核定</p>
-          </div>
-          <div class="cff-node">
-            <span class="cff-dot"></span>
-            <h5>质押登记</h5>
-            <p>动产融资统一登记<br>+ 区块链存证</p>
-          </div>
-          <div class="cff-node">
-            <span class="cff-dot"></span>
-            <h5>放款</h5>
-            <p>资金监管账户<br>+ 授权费归集</p>
-          </div>
-          <div class="cff-node">
-            <span class="cff-dot"></span>
-            <h5>贷后监测</h5>
-            <p>价值重评<br>+ 预警平仓</p>
-          </div>
-        </div>
-
-        <!-- 数据资产凭证 -->
-        <div class="case-cert">
-          <div class="cert-card">
-            <div class="cert-seal-glow"></div>
-            <div class="cert-header">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#B8860B" stroke-width="1.3"/><path d="M10 4v4M6 8h8" stroke="#B8860B" stroke-width="1.3" stroke-linecap="round"/></svg>
-              <span>数据资产凭证</span>
-            </div>
-            <div class="cert-body">
-              <div class="cert-row"><span class="cert-label">凭证编号</span><span class="cert-value">DCBCN8N260044</span></div>
-              <div class="cert-row"><span class="cert-label">发证机关</span><span class="cert-value">上海数据交易所</span></div>
-              <div class="cert-row"><span class="cert-label">发证日期</span><span class="cert-value">2024-10-01</span></div>
-              <div class="cert-row"><span class="cert-label">有效日期</span><span class="cert-value">2026-10-01</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="case-dama-note">
-          DAMA数据管理规范指导，跨部门协同机制，为数据资产质押融资、资产证券化等创新应用奠定基础。
-        </div>
+      <!-- 底部指标高亮 -->
+      <div class="case-highlights">
+        <span class="case-highlight">登记挂牌 / 上海数据交易所</span>
+        <span class="case-highlight hl-orange">数据资产凭证</span>
+        <span class="case-highlight">首个数据资产入表</span>
       </div>
     </div>
 
-    <!-- 案例三：AIGC城市学院 -->
+<!-- 案例二：AIGC城市学院 -->
     <div class="case-block" data-animate>
       <div class="case-left">
         <div class="case-illustration ci-community">
