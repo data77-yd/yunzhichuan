@@ -380,67 +380,6 @@
   transform: scale(1.05);
   box-shadow: 0 6px 24px rgba(0,0,0,.12);
 }
-.case-left {
-  flex: 0 0 380px;
-}
-.case-right {
-  flex: 1;
-}
-.case-illustration {
-  width: 100%;
-  height: 280px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.case-illustration.ci-community {
-  background: linear-gradient(135deg, #EFF6FC 0%, #E8F1F9 100%);
-}
-.case-illustration.ci-city {
-  background: linear-gradient(135deg, #FFF3EC 0%, #FDE8D8 100%);
-}
-.case-right h3 {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin: 0 0 12px;
-}
-.case-right .case-tag {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--orange);
-  background: var(--orange-light);
-  padding: 3px 14px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-.case-right .case-section {
-  margin-bottom: 20px;
-}
-.case-right .case-section h4 {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin: 0 0 8px;
-}
-.case-right .case-section p,
-.case-right .case-section li {
-  font-size: 13px;
-  color: var(--text-body);
-  line-height: 1.9;
-  margin: 0;
-}
-.case-right .case-section ul {
-  margin: 0;
-  padding-left: 18px;
-}
-.case-right .case-section li::marker {
-  color: var(--blue);
-}
 .case-highlights {
   display: flex;
   gap: 12px;
@@ -1025,8 +964,6 @@
   .ops-flow-grid { grid-template-columns: repeat(3, 1fr); }
   .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
   .case-block { flex-direction: column; gap: 32px; }
-  .case-left { flex: 0 0 auto; max-width: 100%; }
-  .case-illustration { height: 220px; }
 }
 
 @media (max-width: 767px) {
@@ -1043,7 +980,6 @@
   .ops-flow-grid { grid-template-columns: 1fr 1fr; }
   .dashboard-grid { grid-template-columns: 1fr 1fr; }
   .case-block { flex-direction: column; }
-  .case-illustration { height: 180px; }
   .ops-cta-banner h2 { font-size: 24px; }
 }
 </style>
@@ -1295,165 +1231,103 @@
 
         <!-- 案例一：四川裕承大数据集团 -->
     <div class="case-block" data-animate>
-      <!-- 上半部分：左侧凭证大图 + 右侧公司介绍 -->
-      <div class="case-cert-hero">
-        <div class="case-cert-left">
-          <div class="cert-image-wrap">
-            <img src="images/cert_yucheng.png" alt="数据资产登记凭证" class="cert-image">
-          </div>
-          <div class="cert-image-label">上海数据交易所 · 数据资产凭证</div>
-          <div class="cert-image-number">凭证编号：DCBCN8N260044</div>
+      <h3><span>案例一</span> 四川裕承大数据集团</h3>
+      <div class="case-detail">
+        <!-- 公司介绍 -->
+        <div class="case-cert-text" style="max-width:720px;margin:0 auto 28px;">
+          <p>四川裕承大数据集团股份有限公司，定位 AI+社区数字化运营企业。公司首个数据资产<strong class="text-accent">「裕承大数据城市电自流通市场波动风险指标 V1.0 2025」</strong>正式通过上海数据交易所审核，完成登记并获颁《数据资产凭证》。这标志着公司在数据资产化、市场化运营方面迈出关键一步，为后续数据价值变现与业务拓展奠定了坚实的权属基础。</p>
         </div>
-        <div class="case-cert-right">
-          <h3>四川裕承大数据集团</h3>
-          <span class="case-tag">数据资产登记凭证</span>
-          <div class="case-section">
-            <p>四川裕承大数据集团股份有限公司，定位 AI+社区数字化运营企业。公司首个数据资产<strong class="hl-data-name">「城市电自流通市场波动风险指标」</strong>V1.0 2025 正式通过上海数据交易所审核，完成登记并获颁《数据资产凭证》。标志着公司在数据资产化、市场化运营方面迈出关键一步，为后续数据价值变现与业务拓展奠定了坚实的权属基础。</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- 下半部分：两阶段流程步骤可视化条 -->
-      <!-- 阶段一：从数据资源到资产凭证 -->
-      <div class="process-phase-wrap">
-        <div class="process-phase-title">阶段一：从数据资源到资产凭证</div>
-        <div class="case-process-flow">
-          <div class="process-step">
-            <div class="ps-num">1</div>
-            <div class="ps-title">资源梳理</div>
-            <div class="ps-desc">整合资产管理系统、电子租赁管理系统、保险管理系统数据，形成高质量数据集</div>
-          </div>
-          <div class="process-arrow">→</div>
-          <div class="process-step">
-            <div class="ps-num">2</div>
-            <div class="ps-title">产品开发</div>
-            <div class="ps-desc">按需求→方案→规划→设计→开发流程，打造"电动自行车租赁风险指标"数据产品</div>
-          </div>
-          <div class="process-arrow">→</div>
-          <div class="process-step">
-            <div class="ps-num">3</div>
-            <div class="ps-title">资产入表</div>
-            <div class="ps-desc">在财务系统中增设「无形资产-数据资源」科目，完成初始计量，数据资产价值显性化</div>
-          </div>
-          <div class="process-arrow">→</div>
-          <div class="process-step active">
-            <div class="ps-num">4</div>
-            <div class="ps-title">交易所登记</div>
-            <div class="ps-desc">提交数据来源合法性声明、组织任命、权属承诺函等全套合规材料，顺利通过上数交审核</div>
-          </div>
-        </div>
-        <div class="process-phase-summary">构建跨部门高效协同机制，按照 DAMA 数据管理规范，设立数据治理专门机构，完成了资源梳理、数据产品开发、资产清单编制、财务入表等一系列标准化流程。</div>
-      </div>
+        <!-- 左右分栏 -->
+        <div class="case-split">
+          <div class="case-split-left">
+            <!-- 阶段一流程（4步） -->
+            <div class="process-phase-wrap">
+              <div class="process-phase-title">阶段一：从数据资源到资产凭证</div>
+              <div class="case-process-flow">
+                <div class="process-step">
+                  <div class="ps-num">1</div>
+                  <div class="ps-title">资源梳理</div>
+                  <div class="ps-desc">整合资产管理系统、电子租赁管理系统、保险管理系统数据，形成高质量数据集</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                  <div class="ps-num">2</div>
+                  <div class="ps-title">产品开发</div>
+                  <div class="ps-desc">按需求→方案→规划→设计→开发流程，打造"电动自行车租赁风险指标"数据产品</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                  <div class="ps-num">3</div>
+                  <div class="ps-title">资产入表</div>
+                  <div class="ps-desc">在财务系统中增设「无形资产-数据资源」科目，完成初始计量，数据资产价值显性化</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step active">
+                  <div class="ps-num">4</div>
+                  <div class="ps-title">交易所登记</div>
+                  <div class="ps-desc">提交数据来源合法性声明、组织任命、权属承诺函等全套合规材料，顺利通过上数交审核</div>
+                </div>
+              </div>
+              <div class="process-phase-summary">构建跨部门高效协同机制，按照 DAMA 数据管理规范，设立数据治理专门机构，完成了资源梳理、数据产品开发、资产清单编制、财务入表等一系列标准化流程。</div>
+            </div>
 
-      <div class="process-phase-divider"></div>
+            <!-- 阶段二流程（5步） -->
+            <div class="process-phase-wrap" style="margin-top:36px;">
+              <div class="process-phase-title">阶段二：从数据资产到融资落地</div>
+              <div class="case-process-flow">
+                <div class="process-step">
+                  <div class="ps-num">5</div>
+                  <div class="ps-title">资产评估</div>
+                  <div class="ps-desc"></div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                  <div class="ps-num">6</div>
+                  <div class="ps-title">融资授信</div>
+                  <div class="ps-desc">资质审查、数据资产评估、授信额度核定</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                  <div class="ps-num">7</div>
+                  <div class="ps-title">质押登记</div>
+                  <div class="ps-desc">动产融资统一登记、区块链存证、法律文件补充</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                  <div class="ps-num">8</div>
+                  <div class="ps-title">放款</div>
+                  <div class="ps-desc">资金监管账户、授权费归集、现金流监控</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                  <div class="ps-num">9</div>
+                  <div class="ps-title">贷后监测 → 违约处置</div>
+                  <div class="ps-desc">数据质量核查、价值重评、预警平仓、违约处置</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="case-split-right">
+            <!-- 数据资产凭证成果展示区 -->
+            <div class="case-cert-result">
+              <div class="case-cert-result-label">成果：数据资产凭证</div>
+              <img src="images/cert_yucheng.png" alt="数据资产凭证">
+              <div class="case-cert-result-meta">上海数据交易所 · DCBCN8N260044</div>
+            </div>
+          </div>
+        </div>
 
-      <!-- 阶段二：从数据资产到融资落地 -->
-      <div class="process-phase-wrap">
-        <div class="process-phase-title">阶段二：从数据资产到融资落地</div>
-        <div class="case-process-flow">
-          <div class="process-step">
-            <div class="ps-num">5</div>
-            <div class="ps-title">资产评估</div>
-            <div class="ps-desc"></div>
-          </div>
-          <div class="process-arrow">→</div>
-          <div class="process-step">
-            <div class="ps-num">6</div>
-            <div class="ps-title">融资授信</div>
-            <div class="ps-desc">资质审查、数据资产评估、授信额度核定</div>
-          </div>
-          <div class="process-arrow">→</div>
-          <div class="process-step">
-            <div class="ps-num">7</div>
-            <div class="ps-title">质押登记</div>
-            <div class="ps-desc">动产融资统一登记、区块链存证、法律文件补充</div>
-          </div>
-          <div class="process-arrow">→</div>
-          <div class="process-step">
-            <div class="ps-num">8</div>
-            <div class="ps-title">放款</div>
-            <div class="ps-desc">资金监管账户、授权费归集、现金流监控</div>
-          </div>
-          <div class="process-arrow">→</div>
-          <div class="process-step">
-            <div class="ps-num">9</div>
-            <div class="ps-title">贷后监测 → 违约处置</div>
-            <div class="ps-desc">数据质量核查、价值重评、预警平仓、违约处置</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 底部指标高亮 -->
-      <div class="case-highlights">
-        <span class="case-highlight">登记挂牌 / 上海数据交易所</span>
-        <span class="case-highlight hl-orange">数据资产凭证</span>
-        <span class="case-highlight">首个数据资产入表</span>
-      </div>
-    </div>
-
-<!-- 案例二：AIGC城市学院 -->
-    <div class="case-block" data-animate>
-      <div class="case-left">
-        <div class="case-illustration ci-community">
-          <svg viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg">
-            <!-- 书本 -->
-            <rect x="36" y="70" width="44" height="110" rx="4" fill="#FFF" stroke="#5B9BD5" stroke-width="1.5"/>
-            <rect x="42" y="78" width="30" height="4" rx="2" fill="#5B9BD5" opacity="0.25"/>
-            <rect x="42" y="90" width="26" height="3" rx="1.5" fill="#5B9BD5" opacity="0.2"/>
-            <rect x="42" y="100" width="30" height="3" rx="1.5" fill="#5B9BD5" opacity="0.2"/>
-            <rect x="42" y="110" width="22" height="3" rx="1.5" fill="#ED7D31" opacity="0.3"/>
-            <text x="58" y="168" text-anchor="middle" font-size="10" fill="#5B9BD5" font-weight="600">课程库</text>
-            <!-- 屏幕 -->
-            <rect x="146" y="48" width="90" height="66" rx="6" fill="#FFF" stroke="#5B9BD5" stroke-width="1.6"/>
-            <rect x="158" y="60" width="66" height="42" rx="3" fill="rgba(91,155,213,.06)"/>
-            <rect x="166" y="70" width="20" height="3" rx="1.5" fill="#ED7D31" opacity="0.4"/>
-            <rect x="166" y="80" width="34" height="2.5" rx="1.25" fill="#5B9BD5" opacity="0.25"/>
-            <rect x="166" y="89" width="26" height="2.5" rx="1.25" fill="#5B9BD5" opacity="0.2"/>
-            <circle cx="227" cy="45" r="5" fill="#ED7D31" opacity="0.35"/>
-            <!-- 用户头像 -->
-            <circle cx="180" cy="158" r="12" fill="#5B9BD5" opacity="0.8"/>
-            <circle cx="180" cy="155" r="5" fill="#FFF" opacity="0.9"/>
-            <rect x="154" y="176" width="52" height="18" rx="9" fill="rgba(91,155,213,.1)" stroke="#5B9BD5" stroke-width="0.8" stroke-dasharray="3,2"/>
-            <!-- 证书 -->
-            <rect x="270" y="110" width="56" height="42" rx="4" fill="#FFFEF9" stroke="#D6C89E" stroke-width="1.4"/>
-            <rect x="278" y="120" width="40" height="4" rx="2" fill="#B8860B" opacity="0.18"/>
-            <rect x="278" y="130" width="30" height="3" rx="1.5" fill="#B8860B" opacity="0.12"/>
-            <rect x="278" y="140" width="24" height="3" rx="1.5" fill="#B8860B" opacity="0.12"/>
-            <text x="298" y="170" text-anchor="middle" font-size="10" fill="#B8860B" font-weight="600">认证</text>
-            <!-- 连接弧线 -->
-            <path d="M80 125 Q120 100 152 90" stroke="#5B9BD5" stroke-width="1" fill="none" stroke-dasharray="5,3" opacity="0.35"/>
-            <path d="M191 108 Q210 125 270 130" stroke="#5B9BD5" stroke-width="1" fill="none" stroke-dasharray="5,3" opacity="0.35"/>
-            <path d="M192 158 Q220 162 265 135" stroke="#ED7D31" stroke-width="1" fill="none" stroke-dasharray="5,3" opacity="0.3"/>
-          </svg>
-        </div>
-      </div>
-      <div class="case-right">
-        <h3>AI知识服务平台：AIGC城市学院</h3>
-        <span class="case-tag">知识资产化</span>
-        <div class="case-section">
-          <h4>背景</h4>
-          <p>AIGC城市学院是面向企业员工和社区用户的AI知识赋能平台，聚焦AI工具实操、数字化转型、数据思维培养，通过线上课程+线下实训相结合的模式提供服务。</p>
-        </div>
-        <div class="case-section">
-          <h4>数据资产</h4>
-          <p>用户学习行为数据、课程完成度数据、知识测评数据、行业技能需求画像</p>
-        </div>
-        <div class="case-section">
-          <h4>运营路径</h4>
-          <ul>
-            <li><strong>内容体系搭建：</strong>覆盖 AI 工具、数据分析、数字化办公等 12 大类课程</li>
-            <li><strong>用户画像构建：</strong>基于学习行为偏好构建企业用户能力画像</li>
-            <li><strong>智能推荐：</strong>根据用户岗位+学习历史，精准推送适配课程</li>
-            <li><strong>数据资产化：</strong>学员技能认证数据形成标准化人才能力凭证</li>
-          </ul>
-        </div>
+        <!-- 底部指标标签 -->
         <div class="case-highlights">
-          <span class="case-highlight">12 大类课程</span>
-          <span class="case-highlight hl-orange">AI 工具实操</span>
-          <span class="case-highlight">人才能力认证</span>
+          <span class="case-highlight">登记挂牌 / 上海数据交易所</span>
+          <span class="case-highlight hl-orange">数据资产凭证</span>
+          <span class="case-highlight">首个数据资产入表</span>
         </div>
       </div>
     </div>
+
+
   </div>
 </section>
 
