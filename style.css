@@ -315,6 +315,24 @@ ul,ol{list-style:none}
 [data-animate]{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 [data-animate].visible{opacity:1;transform:translateY(0)}
 
+/* ========== PROCESS PHASE FLOW (首页案例一两阶段流程) ========== */
+.case-process-flow{display:flex;align-items:flex-start;gap:0;background:#F8F9FB;border-radius:12px;padding:28px 24px;margin-bottom:24px;flex-wrap:nowrap;overflow-x:auto}
+.process-step{flex:1;text-align:center;min-width:120px;padding:0 8px}
+.process-step .ps-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#5B9BD5;color:#FFF;font-size:14px;font-weight:700;margin-bottom:10px}
+.process-step.active .ps-num{background:#ED7D31}
+.process-step .ps-title{font-size:14px;font-weight:700;color:#1a2332;margin-bottom:6px}
+.process-step.active .ps-title{color:#ED7D31}
+.process-step .ps-desc{font-size:12px;color:#888;line-height:1.6}
+.process-arrow{display:flex;align-items:center;justify-content:center;font-size:20px;color:#C0C8D0;padding-top:6px;flex-shrink:0}
+.process-phase-wrap{margin-bottom:16px}
+.process-phase-title{font-size:14px;font-weight:700;color:#3B6EC4;margin-bottom:12px;padding-left:4px;display:flex;align-items:center;gap:8px}
+.process-phase-title::before{content:'';display:inline-block;width:4px;height:16px;background:#5B9BD5;border-radius:2px}
+.process-phase-divider{height:1px;background:linear-gradient(90deg,#E0E6EE 0%,#C8D2DE 50%,#E0E6EE 100%);margin:20px 0 24px}
+.process-phase-summary{margin-top:16px;padding:14px 18px;background:rgba(91,155,213,.04);border-left:3px solid #5B9BD5;border-radius:0 8px 8px 0;font-size:12px;color:#888;line-height:1.8}
+.case-highlights{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;justify-content:center}
+.case-highlight{display:inline-block;padding:8px 18px;font-size:13px;font-weight:600;background:rgba(91,155,213,.07);border-radius:20px;color:#3B6EC4;border:1px solid rgba(91,155,213,.15)}
+.case-highlight.hl-orange{background:rgba(237,125,49,.1);border-color:rgba(237,125,49,.2);color:#ED7D31}
+
 /* ========== RESPONSIVE ========== */
 @media(max-width:1024px){
   .deliverables,.system-showcase{grid-template-columns:1fr 1fr}
@@ -340,6 +358,9 @@ ul,ol{list-style:none}
   .service-matrix{grid-template-columns:1fr 1fr}
   .news-grid{grid-template-columns:1fr}
   .case-cert-hero{flex-direction:column}.case-cert-wrap{max-width:100%;margin:0 auto 16px}
+  .case-process-flow{flex-direction:column;align-items:center;gap:0;padding:20px 16px}
+  .process-step{width:100%;padding:12px 0}
+  .process-arrow{transform:rotate(90deg);padding:4px 0}
   .case-results,.case-steps{grid-template-columns:1fr 1fr}
   .case-highlight-banner{flex-direction:column;align-items:center}
   .footer-grid{grid-template-columns:1fr;gap:24px}
