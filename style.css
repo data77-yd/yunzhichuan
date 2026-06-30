@@ -207,11 +207,14 @@ ul,ol{list-style:none}
 .text-accent{color:#ED7D31;font-weight:700}
 
 /* 凭证成果展示区 */
-.case-cert-arrow{text-align:center;font-size:28px;color:#5B9BD5;margin:8px 0;line-height:1;user-select:none}
-.case-cert-result{border:2px dashed #5B9BD5;background:#fff;border-radius:16px;padding:28px 32px;box-shadow:0 4px 24px rgba(91,155,213,.12);border-left:4px solid #5B9BD5;max-width:520px;margin:0 auto;text-align:center}
+.case-cert-result{border:2px dashed #5B9BD5;background:#fff;border-radius:16px;padding:28px 32px;box-shadow:0 4px 24px rgba(91,155,213,.12);border-left:4px solid #5B9BD5;width:100%;max-width:100%;text-align:center}
 .case-cert-result img{width:100%;max-width:380px;border-radius:10px;display:block;margin:12px auto 0}
 .case-cert-result-label{font-size:12px;font-weight:700;color:#5B9BD5;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
 .case-cert-result-meta{font-size:11px;color:#999;font-family:"SF Mono","Menlo","Consolas",monospace;margin-top:8px;letter-spacing:.3px}
+/* 案例左右分栏 */
+.case-split{display:flex;gap:32px;align-items:flex-start}
+.case-split-left{flex:1;min-width:0}
+.case-split-right{flex:0 0 380px;max-width:380px}
 /* step card update */
 .step-desc{font-size:11px;color:#888;margin-top:6px;line-height:1.5}
 .step-card-accent{background:rgba(237,125,49,.08);border:1px solid rgba(237,125,49,.2)}
@@ -359,8 +362,10 @@ ul,ol{list-style:none}
   .deliverables,.system-showcase{grid-template-columns:1fr}
   .service-matrix{grid-template-columns:1fr 1fr}
   .news-grid{grid-template-columns:1fr}
-  .case-cert-result{max-width:100%;padding:20px 16px;margin:0 12px}
+  .case-cert-result{padding:20px 16px}
   .case-cert-result img{max-width:100%}
+  .case-split{flex-direction:column}
+  .case-split-right{flex:auto;max-width:100%}
   .case-process-flow{flex-direction:column;align-items:center;gap:0;padding:20px 16px}
   .process-step{width:100%;padding:12px 0}
   .process-arrow{transform:rotate(90deg);padding:4px 0}
