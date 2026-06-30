@@ -207,7 +207,7 @@ ul,ol{list-style:none}
 .text-accent{color:#ED7D31;font-weight:700}
 
 /* 凭证成果展示区 */
-.case-cert-result{border:2px dashed #5B9BD5;background:#fff;border-radius:16px;padding:28px 32px;box-shadow:0 4px 24px rgba(91,155,213,.12);border-left:4px solid #5B9BD5;width:100%;max-width:100%;text-align:center}
+.case-cert-result{background:#fff;border-radius:12px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.06);width:100%;max-width:100%;text-align:center}
 .case-cert-result img{width:100%;max-width:380px;border-radius:10px;display:block;margin:12px auto 0}
 .case-cert-result-label{font-size:12px;font-weight:700;color:#5B9BD5;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
 .case-cert-result-meta{font-size:11px;color:#999;font-family:"SF Mono","Menlo","Consolas",monospace;margin-top:8px;letter-spacing:.3px}
@@ -321,14 +321,14 @@ ul,ol{list-style:none}
 [data-animate].visible{opacity:1;transform:translateY(0)}
 
 /* ========== PROCESS PHASE FLOW (首页案例一两阶段流程) ========== */
-.case-process-flow{display:flex;align-items:flex-start;gap:0;background:#F8F9FB;border-radius:12px;padding:20px 12px;margin-bottom:24px;flex-wrap:wrap;justify-content:center}
-.process-step{flex:1;text-align:center;min-width:90px;padding:0 4px}
-.process-step .ps-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#5B9BD5;color:#FFF;font-size:13px;font-weight:700;margin-bottom:8px}
+.case-process-flow{display:flex;align-items:center;gap:0;background:#F8F9FB;border-radius:10px;padding:16px 8px;margin-bottom:20px;flex-wrap:nowrap}
+.process-step{flex:0 1 auto;text-align:center;min-width:72px;max-width:130px;padding:0 2px}
+.process-step .ps-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#5B9BD5;color:#FFF;font-size:12px;font-weight:700;margin-bottom:6px}
 .process-step.active .ps-num{background:#ED7D31}
-.process-step .ps-title{font-size:13px;font-weight:700;color:#1a2332;margin-bottom:4px}
+.process-step .ps-title{font-size:12px;font-weight:700;color:#1a2332;margin-bottom:3px}
 .process-step.active .ps-title{color:#ED7D31}
-.process-step .ps-desc{font-size:11px;color:#888;line-height:1.5}
-.process-arrow{display:flex;align-items:center;justify-content:center;font-size:16px;color:#C0C8D0;padding-top:4px;flex-shrink:0}
+.process-step .ps-desc{font-size:10px;color:#888;line-height:1.4}
+.process-arrow{display:flex;align-items:center;justify-content:center;font-size:14px;color:#C0C8D0;padding-top:2px;flex-shrink:0}
 .process-phase-wrap{margin-bottom:16px}
 .process-phase-title{font-size:14px;font-weight:700;color:#3B6EC4;margin-bottom:12px;padding-left:4px;display:flex;align-items:center;gap:8px}
 .process-phase-title::before{content:'';display:inline-block;width:4px;height:16px;background:#5B9BD5;border-radius:2px}
